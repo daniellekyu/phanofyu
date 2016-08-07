@@ -1,0 +1,48 @@
+// Phan of Yu styles
+html,
+body {
+	height: 100%;
+	min-height: 500px;
+	max-height: 1076px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	text-transform: none;
+}
+
+.active {
+	pointer-events: none;
+}
+
+.navbar-brand {
+    text-transform: none;
+}
+
+.section {
+	height: 100%;
+	width: 100%;
+
+	&-intro {
+		background-color: rgb(24, 188, 156);
+	}
+
+	&-uci {
+		background-color: rgb(19,148,99);
+	}
+
+	&-sd {
+		background-color: rgb(124,175,179);
+	}
+
+	&-datestuff {
+		background-color: rgb(44,62,80);
+	}
+
+	&-proposal {
+		background-color: rgb(181,232,243);
+	}
+
+	&-wedding {
+		background-color: rgb(6,116,98);
+	}
+}
