@@ -1,0 +1,19 @@
+@mixin viewport($viewport-size) {
+  @if $viewport-size == "small" {
+    @media (max-width: 767px) {
+      @content;
+    }
+  }
+
+  @else if $viewport-size == "medium" {
+    @media (max-width: 992px) {
+      @content;
+    }
+  }
+
+  @else if $viewport-size == "large" {
+    @media (max-width: 1200px) {
+      @content;
+    }
+  }
+}

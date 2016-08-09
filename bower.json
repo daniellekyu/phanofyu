@@ -1,0 +1,22 @@
+{
+  "name": "phanofyu",
+  "description": "Minh + Danielle wedding website",
+  "main": "./public/index.html",
+  "authors": [
+    "Danielle Yu <daniellekyu@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/daniellekyu/phanofyu",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "bootstrap-sass-official#^3.3.7",
+    "font-awesome": "fontawesome#^4.6.3"
+  }
+}
