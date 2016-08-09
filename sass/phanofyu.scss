@@ -1,3 +1,10 @@
+// Imports
+@import 'bootstrap';
+@import 'theme';
+@import 'variables';
+@import 'settings';
+@import 'mixins';
+
 // Phan of Yu styles
 html,
 body {
@@ -10,17 +17,164 @@ h1, h2, h3, h4, h5, h6 {
 	text-transform: none;
 }
 
-.active {
-	pointer-events: none;
+.hidden-text {
+	position: absolute !important;
+	clip: rect(1px, 1px, 1px, 1px);
 }
 
-.navbar-brand {
-    text-transform: none;
+.active {
+	cursor: default;
+}
+
+.navbar {
+	&-custom {
+		min-width: $smallest-viewport-width;
+	}
+
+	&-header {
+		float: none;
+	}
+
+	&-brand {
+	    text-transform: none;
+
+	    @include viewport(small) {
+	    	line-height: 65px;
+	    	padding: 0 0 0 15px;
+	    }
+	}
+
+	&-rsvp {
+		display: inline-block;
+		height: 50px;
+		width: 100px;
+		line-height: 50px;
+		text-align: right;
+
+		@include viewport(small) {
+			padding: 0 15px 0 0;
+			position: relative;
+			top: 8px;
+		}
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+.timeline {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: translateY(-50%);
+	color: black;
+	cursor: pointer;
+
+	// theme override
+	background: none;
+	border: none;
+	box-shadow: none;
+
+	ul {
+		margin: 10px;
+	}
+
+	li {
+		// theme override
+		float: none;
+
+		border: 3px solid rgb(44,62,80);
+		border-radius: 15px;
+		height: 20px;
+		width: 20px;
+		margin: 20px 10px;
+
+		&.active {
+			background-color: rgb(44,62,80);
+
+			a {
+				background-image: none;
+			}
+
+			// TODO: optimize so code isn't repeated
+			a:before {
+				opacity: 1;
+				transition: .2s opacity ease .1s;
+			}
+
+			// TODO: optimize so code isn't repeated
+			.timeline-label {
+				opacity: 1;
+				transform: translateY(-42%);
+			}
+		}
+
+		a {
+			width: 100%;
+			height: 100%;
+			padding: 0;
+
+			&:before {
+				content: '';
+				width: 33px;
+				height: 2px;
+				background: rgba(0, 0 ,0, .5);
+				display: block;
+				position: absolute;
+				left: -36px;
+				top: 50%;
+				opacity: 0;
+			}
+
+			&:hover {
+				background-color: rgba(44,62,80, .5);
+
+				&:before {
+					opacity: 1;
+					transition: .2s opacity ease .1s;
+				}
+
+				& + .timeline-label {
+					opacity: 1;
+					transform: translateY(-42%);
+				}
+			}
+		}
+	}
+
+	&-container {
+		position: fixed;
+		top: $nav-height-large;
+		bottom: 0;
+		right: 0;
+
+		@include viewport(small) {
+			top: $nav-height-small;
+		}
+
+		@media (max-width: $smallest-viewport-width) {
+			display: none;
+		}
+	}
+
+	&-label {
+		color: white;
+		background: rgba(0, 0, 0, .5);
+		position: absolute;
+		right: 50px;
+		top: 0;
+		min-width: 150px;
+		padding: 15px;
+		opacity: 0;
+		transition: .3s opacity ease, .5s transform ease;
+	}
 }
 
 .section {
 	height: 100%;
 	width: 100%;
+	min-width: $smallest-viewport-width;
 
 	&-intro {
 		background-color: rgb(24, 188, 156);
@@ -35,7 +189,7 @@ h1, h2, h3, h4, h5, h6 {
 	}
 
 	&-datestuff {
-		background-color: rgb(44,62,80);
+		background-color: rgb(211,211,211);
 	}
 
 	&-proposal {

@@ -8,9 +8,8 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 		<!-- Optional theme -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"> -->
 
-		<link rel="stylesheet" href="./built/css/freelancer.min.css">
 		<link rel="stylesheet" href="./built/css/phanofyu.css">
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -18,29 +17,75 @@
 		<!-- Latest compiled and minified JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     </head>
-	<body data-spy="scroll" data-target="#mainNav">
+	<body data-spy="scroll" data-target="#timelineNav">
+		<div class="timeline-container">
+			<nav class="timeline navbar" id="timelineNav">
+				<ul class="nav navbar-nav">
+					<li class="active">
+						<a href="#intro"><span class="hidden-text">Intro</span></a>
+						<div class="timeline-label">
+							<span>Fall 2012: Our story begins</span>
+						</div>
+					</li>
+					<li class="page-scroll">
+						<a href="#uci"><span class="hidden-text">UCI</span></a>
+						<div class="timeline-label">
+							<span>October 2012: The first time we met</span>
+						</div>
+					</li>
+					<li class="page-scroll">
+						<a href="#sd"><span class="hidden-text">SD</span></a>
+						<div class="timeline-label">
+							<span>Early 2014: Time in San Diego</span>
+						</div>
+					</li>
+					<li class="page-scroll">
+						<a href="#moving"><span class="hidden-text">Moving</span></a>
+						<div class="timeline-label">
+							<span>Summer 2015: Reunited in the Bay</span>
+						</div>
+					</li>
+					<li class="page-scroll">
+						<a href="#datestuff"><span class="hidden-text">Date stuff</span></a>
+						<div class="timeline-label">
+							<span>Summer 2015 - present: Enjoying life together</span>
+						</div>
+					</li>
+					<li class="page-scroll">
+						<a href="#proposal"><span class="hidden-text">Proposal</span></a>
+						<div class="timeline-label">
+							<span>May 2016: The Proposal!</span>
+						</div>
+					</li>
+					<li class="page-scroll">
+						<a href="#wedding"><span class="hidden-text">Wedding</span></a>
+						<div class="timeline-label">
+							<span>? XXXX - Our Wedding</span>
+						</div>
+					</li>
+					<li class="page-scroll">
+						<a href="#rsvp"><span class="hidden-text">RSVP</span></a>
+						<div class="timeline-label">
+							<span>RSVP for fun times!</span>
+						</div>
+					</li>
+				</ul>
+			</nav>
+		</div>
 		<section class="container-fluid section section-intro" id="intro">
 			<nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom affix-top">
 		        <div class="container">
 		            <!-- Brand and toggle get grouped for better mobile display -->
-		            <div class="navbar-header page-scroll">
-		                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-		                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
-		                </button>
+		            <div class="navbar-header">
 		                <a class="navbar-brand" href="#intro">Phan of Yu</a>
+                        <a href="#rsvp" class="navbar-rsvp pull-right">RSVP</a>
 		            </div>
 
 		            <!-- Collect the nav links, forms, and other content for toggling -->
-		            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-		                <ul class="nav navbar-nav navbar-right">
-		                    <li class="active">
-		                        <a href="#intro">Story</a>
-		                    </li>
-		                    <li class="page-scroll">
-		                        <a href="#rsvp">RSVP</a>
-		                    </li>
-		                </ul>
-		            </div>
+	                <ul class="nav navbar-nav navbar-right">
+	                    <li>
+	                    </li>
+	                </ul>
 		            <!-- /.navbar-collapse -->
 		        </div>
 		        <!-- /.container-fluid -->
