@@ -1,0 +1,21 @@
+<h3>RSVP</h3>
+<span>Kindly respond by xx.xx.xx</span><br/>
+<span>We have reserved {{numSeats}} seats in your honor</span><br/>
+<form>
+	{{#each guests}}
+		<span>{{name}}</span>
+		<select name="rsvp">
+			<option value="no response"
+				{{#eq status 'no response'}}selected{{/eq}}
+			>No response</option>
+			<option value="attending"
+				{{#eq status 'attending'}}selected{{/eq}}
+			>Attending</option>
+			<option value="regretfully decline"
+				{{#eq status 'decline'}}selected{{/eq}}
+			>Regretfully decline</option>
+		</select>
+		<br/>
+	{{/each}}
+</form>
+<button id="saveRsvp">Save</button>

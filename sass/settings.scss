@@ -1,0 +1,17 @@
+$-color-sage: rgba(150, 170, 129, 1);
+
+@font-face {
+    font-family: 'notera';
+    src: url('./../../font/notera.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'luna';
+    src: url('./../../font/Luna.ttf') format('truetype');
+}
+
+h1,
+h2 {
+	font-family: 'luna', Verdana, Tahoma;
+    color: white;
+}

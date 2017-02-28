@@ -4,14 +4,26 @@
   "description": "Minh + Danielle wedding website",
   "repository": "https://github.com/daniellekyu/phanofyu.git",
   "author": "Danielle Yu <daniellekyu@gmail.com>",
-  "dependencies": {},
-  "devDependencies": {
+  "dependencies": {
+    "bootstrap": "^3.3.7",
     "bootstrap-sass": "^3.3.7",
+    "firebase": "^3.4.0",
+    "fullpage.js": "^2.9.2",
+    "handlebars": "^4.0.6",
+    "jquery": "^3.1.0",
+    "jquery-parallax.js": "^1.4.3",
+    "slick-carousel": "^1.6.0"
+  },
+  "devDependencies": {
+    "browserify": "^13.1.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-bower": "0.0.13",
     "gulp-notify": "^2.2.0",
     "gulp-ruby-sass": "^2.0.6",
-    "gulp-sass": "^2.3.2"
+    "gulp-sass": "^2.3.2",
+    "stringify": "^5.1.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
   }
 }
