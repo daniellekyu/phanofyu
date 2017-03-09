@@ -9,7 +9,7 @@ section {
 .section {
 	height: 100vh;
 	width: 100%;
-	min-width: $smallest-viewport-width;
+	min-width: $-smallest-viewport-width;
 	background-size: cover;
 	background-position: center center;
 
@@ -25,8 +25,10 @@ section {
 		}
 
 		.section-heading {
-			position: relative;
+			position: absolute;
 			top: 21%;
+			left: 0;
+			right: 0;
 			line-height: 2em;
 		}
 	}
@@ -44,7 +46,7 @@ section {
 		.gallery-image {
 			height: 100vh;
 			width: 100%;
-			min-width: $smallest-viewport-width;
+			min-width: $-smallest-viewport-width;
 			background-size: cover;
 			background-position: center center;
 		}

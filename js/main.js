@@ -5,6 +5,7 @@ window.jQuery = $ = require('jquery');
 require('bootstrap');
 require('./parallax.min.js');
 require('slick-carousel');
+require('./nav');
 
 var config = {
     apiKey: "AIzaSyBADSmx6tSneYQW1q4TCtCaRHfdTW_HMPI",
@@ -14,6 +15,14 @@ var config = {
     messagingSenderId: "409746737940"
 };
 firebase.initializeApp(config);
+
+var isTouchDevice = 'ontouchstart' in document.documentElement;
+var touchClass = 'touch';
+
+if (isTouchDevice) {
+	document.body.classList.add(touchClass);
+}
+
 require('./rsvp')();
 
 $('.parallax-window').parallax();
@@ -21,6 +30,3 @@ $('.parallax-window').parallax();
 $('.gallery').slick({
 	dots: true
 });
-
-
-

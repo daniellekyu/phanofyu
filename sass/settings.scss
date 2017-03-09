@@ -1,5 +1,3 @@
-$-color-sage: rgba(150, 170, 129, 1);
-
 @font-face {
     font-family: 'notera';
     src: url('./../../font/notera.ttf') format('truetype');
@@ -8,6 +6,11 @@ $-color-sage: rgba(150, 170, 129, 1);
 @font-face {
     font-family: 'luna';
     src: url('./../../font/Luna.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'bromello';
+    src: url('./../../font/bromello.ttf') format('truetype');
 }
 
 h1,

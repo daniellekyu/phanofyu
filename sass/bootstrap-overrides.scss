@@ -1,0 +1,76 @@
+// .navbar {
+// 	z-index: 1;
+// 	min-height: $-navbar-height;
+// 	background-color: $-color-dark-gray;
+
+// 	&-brand {
+// 		color: $-color-light-gray;
+// 	    line-height: $-navbar-height / 2;
+// 	}
+// }
+
+// .navbar-nav {
+//     float: left;
+//     margin: 0;
+// }
+
+// .nav > li {
+//     position: relative;
+//     display: block;
+//     float: left;
+// }
+
+// .navbar-nav > li > a {
+//     padding-top: 15px;
+//     padding-bottom: 15px;
+//     color: $-color-light-gray;
+//     line-height: $-navbar-height / 2;
+//     transition: color .1s ease-in-out;
+
+//     &:hover,
+//     &:focus {
+// 		background: none;
+// 		color: white;
+//     }
+// }
+
+// @media (min-width: 768px) {
+// 	.navbar-collapse.collapse {
+// 	    display: none !important;
+// 	}
+// }
+
+// @media (min-width: 768px) {
+// 	.navbar-header {
+// 	    float: none;
+// 	}
+// }
+
+// @media (min-width: 768px) {
+// 	.navbar-toggle {
+// 	    display: block;
+// 	    margin-right: 0;
+// 	}
+// }
+
+// .navbar-default .navbar-toggle {
+// 	border-color: transparent;
+// 	margin-top: 0;
+// 	margin-bottom: 0;
+// 	height: $-navbar-height;
+
+// 	@include viewport(small) {
+// 		display: block;
+// 	}
+
+// 	&:hover,
+// 	&:focus {
+// 		background-color: transparent;
+// 	}
+
+// 	&:hover {
+// 		.icon-bar {
+// 			background-color: white;
+// 		}
+// 	}
+// }

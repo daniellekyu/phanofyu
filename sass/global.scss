@@ -3,7 +3,7 @@ body {
 	height: 100%;
 	min-height: 500px;
 	max-height: 1076px;
-	min-width: $smallest-viewport-width;
+	min-width: $-smallest-viewport-width;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -11,11 +11,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .logo {
-	width: 200px;
-	height: 200px;
-
-	@include viewport(small) {
-		width: 150px;
-		height: 150px;
-	}
+	width: 100px;
+	height: $-navbar-height;
 }

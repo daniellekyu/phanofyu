@@ -30,3 +30,10 @@
 .slick-next {
     right: 83px;
 }
+
+.touch {
+	.section-gallery:hover .slick-prev,
+	.section-gallery:hover .slick-next {
+		opacity: 0;
+	}
+}

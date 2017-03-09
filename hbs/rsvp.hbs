@@ -1,10 +1,13 @@
 <h3>RSVP</h3>
 <span>Kindly respond by xx.xx.xx</span><br/>
 <span>We have reserved {{numSeats}} seats in your honor</span><br/>
-<form>
+<form id="rsvp">
 	{{#each guests}}
 		<span>{{name}}</span>
-		<select name="rsvp">
+		{{#if name_unknown}}
+			<input type="text"></input>
+		{{/if}}
+		<select name="rsvp" id="rsvp-{{@index}}">
 			<option value="no response"
 				{{#eq status 'no response'}}selected{{/eq}}
 			>No response</option>
@@ -17,5 +20,9 @@
 		</select>
 		<br/>
 	{{/each}}
+	<p>Shorty what you drank?</p>
+	<input type="text" id="drink-selection">
+	<p>Hey Mr. DJ play my song:</p>
+	<input id="song-selection">
 </form>
 <button id="saveRsvp">Save</button>

@@ -1,13 +1,15 @@
 // External Imports
 @import 'bootstrap';
-@import 'theme';
+// @import 'theme';
 @import './external/slick';
 @import './external/slick-theme';
 
 // My imports
-@import './slick-overrides';
-@import 'variables';
-@import 'settings';
 @import 'mixins';
+@import 'variables';
+@import 'bootstrap-overrides';
+@import './slick-overrides';
+@import 'settings';
 @import 'global';
 @import 'sections';
+@import 'nav';

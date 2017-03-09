@@ -10,6 +10,7 @@ handlebars.registerHelper('eq', function (value1, value2, options) {
 
 var source = require('./../hbs/rsvp.hbs');
 var firebase = require('firebase/app');
+var saveMessage = 'Your response has been saved. Thank you for RSVPing!';
 
 module.exports = function() {
 	var database = firebase.database();
@@ -22,24 +23,41 @@ module.exports = function() {
 		var householdId = queryString.slice(1, queryString.length);
 		var household,
 			data = {};
+
 		firebase.database().ref('householdId/' + householdId).once('value').then(function(response) {
 			household = response.val();
 			data.guests = household;
 			var html = renderTemplate(data);
 			$('#section-rsvp').append(html);
+			document.getElementById('saveRsvp').addEventListener('click', updateRsvp.bind(this, householdId, data));
 		});
-		document.getElementById('saveRsvp').addEventListener('click', updateRsvp.bind(this, householdId, data));
 	}
 
-	// on update of any form element, update userData
-
 	function getFormValues() {
-		// should return constructed object
-	};
+		var formValues = document.getElementsByTagName('select', '#rsvp');
+		formValues = Array.prototype.slice.call(formValues);
+		formValues = formValues.map(function(el) {
+			return el.value;
+		});
+
+		return formValues;
+	}
 
 	function updateRsvp(householdId, data) {
 		var updates = {};
-		updates['/householdId/' + householdId + '/status'] = ['attending'];
+		var i = 0,
+			len = data.guests.length;
+
+		var formValues = getFormValues();
+		var drinkSelection = document.getElementById('drink-selection', '#rsvp').value;
+		var songSelection = document.getElementById('song-selection', '#rsvp').value;
+
+		for (i; i < len; i++) {
+			updates['/householdId/' + householdId + '/' + i + '/status'] = formValues[i];
+		}
+
+		updates['/householdId/' + householdId + '/' + 0 + '/drinks'] = drinkSelection;
+		updates['/householdId/' + householdId + '/' + 0 + '/songs'] = songSelection;
 
 		firebase.database().ref().update(updates);
 	}
