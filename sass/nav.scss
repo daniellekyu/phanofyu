@@ -37,8 +37,8 @@ html,body {
 }
 
 .menu li > a:hover {
-	color: #7cb228;
-	border-bottom: 4px solid #7cb228;
+	// color: #7cb228;
+	// border-bottom: 4px solid #7cb228;
 }
 
 .menu li.close {
@@ -56,66 +56,74 @@ html,body {
 	font-size: 30px;
 }
 
-/*
-This media query hides the horizontal menu and makes the mobile menu button visible
-Play around with the max-width for a width that best fits your design
-*/
-// @media (max-width: 768px) {
-	.menu {
-		position: absolute;
-		top: 0;
-		right: 0;
-		display: block;
-		background-color: #FFF;
-		width: 300px;
-		z-index: 3;
-		transform: translateX(300px);
-		transition: all 200ms ease-in-out;
-	}
 
-	.menu.open {
-		transform: translateX(0);
-	}
+.menu {
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: block;
+	background-color: #FFF;
+	width: 300px;
+	z-index: 3;
+	transform: translateX(300px);
+	transition: all 200ms ease-in-out;
+}
 
-	.menu li {
-		display: block;
-		padding: 0 14px;
-		border-bottom: 1px solid #e5e5e5;
-	}
+.menu.open {
+	transform: translateX(0);
+}
 
-	.menu li > a {
-		border: none;
-		border-left: 2px solid transparent;
-	}
+.menu li {
+	display: block;
+	padding: 0 14px;
+	// border-bottom: 1px solid #e5e5e5;
+}
 
-	.menu li > a:hover {
-		border: none;
-		border-left: 2px solid #7cb228;
-	}
+.menu li > a {
+	border: none;
+	// border-left: 2px solid transparent;
+}
 
-	.menu li.close {
-		display: block;
-		text-align: right;
-	}
+.menu li > a:hover {
+	border: none;
+	// border-bottom: 2px solid $-color-sage;
+	// border-left: 2px solid $-color-sage;
+}
 
-	.mobile-btn {
-		display: inline-block;
-	}
+.menu li.close {
+	display: block;
+	text-align: right;
+}
 
-	.overlay {
-		position: fixed;
-		top: 0;
-		left: 0;
-		height: 100%;
-		width: 100%;
-		background-color: rgba(0,0,0,.4);
-		opacity: 0;
-		z-index: -1;
-		transition: opacity 100ms linear;
-	}
+.mobile-btn {
+	display: inline-block;
+}
 
-	.overlay.open {
-		z-index: 1;
-		opacity: 1;
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0,0,0,.4);
+	opacity: 0;
+	z-index: -1;
+	transition: opacity 100ms linear;
+}
+
+.overlay.open {
+	z-index: 1;
+	opacity: 1;
+}
+
+.active.menu-item {
+	a {
+		color: $-color-sage;
 	}
-// }
+}
+
+.menu > li > a:hover,
+.menu > li > a:focus {
+    text-decoration: none;
+    background-color: #eeeeee;
+}

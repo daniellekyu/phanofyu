@@ -39,7 +39,6 @@ module.exports = (function() {
 	        $('html, body').animate({
 	            scrollTop: $(hash).offset().top + 'px'
 	        }, 'slow');
-	        window.location.href = href;
 	    });
 	});
 })();
