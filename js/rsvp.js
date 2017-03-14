@@ -8,14 +8,15 @@ handlebars.registerHelper('eq', function (value1, value2, options) {
 	return options.inverse(this);
 });
 
-var source = require('./../hbs/rsvp.hbs');
+var rsvpSource = require('./../hbs/rsvp.hbs');
+var rsvpNavSource = require('./../hbs/rsvp-nav.hbs');
 var firebase = require('firebase/app');
 var saveMessage = 'Your response has been saved. Thank you for RSVPing!';
 
 module.exports = function() {
 	var database = firebase.database();
 
-	var renderTemplate = handlebars.compile(source);
+	var renderTemplate = handlebars.compile(rsvpSource);
 
 	var queryString = window.location.search;
 
@@ -28,8 +29,11 @@ module.exports = function() {
 			household = response.val();
 			data.guests = household;
 			var html = renderTemplate(data);
-			$('#section-rsvp').append(html);
+			$(html).insertAfter($('#hashtag'));
 			document.getElementById('saveRsvp').addEventListener('click', updateRsvp.bind(this, householdId, data));
+
+			var htmlForNav = handlebars.compile(rsvpNavSource);
+			$('#nav').append(htmlForNav);
 		});
 	}
 

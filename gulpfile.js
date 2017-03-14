@@ -8,6 +8,8 @@ var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
 var stringify = require('stringify');
+var handlebars = require('gulp-compile-handlebars');
+var rename = require('gulp-rename');
 
 var config = {
      sassPath: './sass',
@@ -47,4 +49,20 @@ gulp.task('sass', function () {
 		.pipe(gulp.dest('./public/built/css'));
 });
 
-gulp.task('default', ['bower', 'sass', 'js']);
+gulp.task('hbs', function () {
+    var options = {
+        batch : ['./hbs'],
+        helpers : {
+            capitals : function(str){
+                return str.toUpperCase();
+            }
+        }
+    };
+
+    return gulp.src('./hbs/index.hbs')
+        .pipe(handlebars({}, options))
+        .pipe(rename('index.html'))
+        .pipe(gulp.dest('public'));
+});
+
+gulp.task('default', ['bower', 'sass', 'js', 'hbs']);

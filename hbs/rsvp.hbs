@@ -1,28 +1,31 @@
-<h3>RSVP</h3>
-<span>Kindly respond by xx.xx.xx</span><br/>
-<span>We have reserved {{numSeats}} seats in your honor</span><br/>
-<form id="rsvp">
-	{{#each guests}}
-		<span>{{name}}</span>
-		{{#if name_unknown}}
-			<input type="text"></input>
-		{{/if}}
-		<select name="rsvp" id="rsvp-{{@index}}">
-			<option value="no response"
-				{{#eq status 'no response'}}selected{{/eq}}
-			>No response</option>
-			<option value="attending"
-				{{#eq status 'attending'}}selected{{/eq}}
-			>Attending</option>
-			<option value="regretfully decline"
-				{{#eq status 'decline'}}selected{{/eq}}
-			>Regretfully decline</option>
-		</select>
-		<br/>
-	{{/each}}
-	<p>Shorty what you drank?</p>
-	<input type="text" id="drink-selection">
-	<p>Hey Mr. DJ play my song:</p>
-	<input id="song-selection">
-</form>
-<button id="saveRsvp">Save</button>
+<section class="section section-youre-invited"></section>
+<section class="section section-rsvp" id="section-rsvp">
+	<h3>RSVP</h3>
+	<span>Kindly respond by xx.xx.xx</span><br/>
+	<span>We have reserved {{numSeats}} seats in your honor</span><br/>
+	<form id="rsvp">
+		{{#each guests}}
+			<span>{{name}}</span>
+			{{#if name_unknown}}
+				<input type="text"></input>
+			{{/if}}
+			<select name="rsvp" id="rsvp-{{@index}}">
+				<option value="no response"
+					{{#eq status 'no response'}}selected{{/eq}}
+				>No response</option>
+				<option value="attending"
+					{{#eq status 'attending'}}selected{{/eq}}
+				>Attending</option>
+				<option value="regretfully decline"
+					{{#eq status 'decline'}}selected{{/eq}}
+				>Regretfully decline</option>
+			</select>
+			<br/>
+		{{/each}}
+		<p>Shorty what you drank?</p>
+		<input type="text" id="drink-selection">
+		<p>Hey Mr. DJ play my song:</p>
+		<input id="song-selection">
+	</form>
+	<button id="saveRsvp">Save</button>
+</section>
