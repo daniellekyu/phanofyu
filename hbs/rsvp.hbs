@@ -1,31 +1,48 @@
 <section class="section section-youre-invited"></section>
-<section class="section section-rsvp" id="section-rsvp">
-	<h3>RSVP</h3>
-	<span>Kindly respond by xx.xx.xx</span><br/>
-	<span>We have reserved {{numSeats}} seats in your honor</span><br/>
-	<form id="rsvp">
-		{{#each guests}}
-			<span>{{name}}</span>
-			{{#if name_unknown}}
-				<input type="text"></input>
-			{{/if}}
-			<select name="rsvp" id="rsvp-{{@index}}">
-				<option value="no response"
-					{{#eq status 'no response'}}selected{{/eq}}
-				>No response</option>
-				<option value="attending"
-					{{#eq status 'attending'}}selected{{/eq}}
-				>Attending</option>
-				<option value="regretfully decline"
-					{{#eq status 'decline'}}selected{{/eq}}
-				>Regretfully decline</option>
-			</select>
-			<br/>
-		{{/each}}
-		<p>Shorty what you drank?</p>
-		<input type="text" id="drink-selection">
-		<p>Hey Mr. DJ play my song:</p>
-		<input id="song-selection">
-	</form>
-	<button id="saveRsvp">Save</button>
+<section class="section section-rsvp container" id="section-rsvp">
+	<div class="row">
+		<div class="col-lg-8 col-md-8 col-sm-8 col-lg-offset-2 col-md-offset-2 col-sm-offset-2 form-box">
+			<h3 class="section-rsvp-title">RSVP</h3>
+			<div class="form-line">
+				<span>Kindly respond by xx.xx.xx</span><br/>
+				<span>We have reserved {{numSeats}} seats in your honor</span><br/>
+			</div>
+			<form id="rsvp">
+				<div class="form-group">
+					{{#each guests}}
+						<div class="form-line {{#if name_unknown}}guest-unknown{{/if}}">
+							<span class="guest-name">{{name}}</span>
+							<div class="guest-entry">
+								{{#if name_unknown}}
+									<input type="text" class="form-control guest-name-entry" placeholder="Guest's Name"></input>
+								{{/if}}
+								<select name="rsvp" id="rsvp-{{@index}}">
+									<option
+										{{#eq status 'no response'}}selected{{/eq}}
+									>No response</option>
+									<option
+										{{#eq status 'attending'}}selected{{/eq}}
+									>Attending</option>
+									<option
+										{{#eq status 'decline'}}selected{{/eq}}
+									>Regretfully decline</option>
+								</select>
+							</div>
+						</div>
+					{{/each}}
+					<div class="form-line">
+						<span>Shorty what you drank?</span>
+						<input type="text" id="drink-selection" class="form-control">
+					</div>
+					<div class="form-line">
+						<span>Hey Mr. DJ play my song:</span>
+						<input id="song-selection" class="form-control">
+					</div>
+				</div>
+			</form>
+			<div class="form-button-container">
+				<button class="btn form-button" id="saveRsvp">Save</button>
+			</div>
+		</div>
+	</div>
 </section>

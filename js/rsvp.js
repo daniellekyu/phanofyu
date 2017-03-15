@@ -34,6 +34,11 @@ module.exports = function() {
 
 			var htmlForNav = handlebars.compile(rsvpNavSource);
 			$('#nav').append(htmlForNav);
+
+			$('select').selectpicker({
+				style: 'btn-default',
+				size: 4
+			});
 		});
 	}
 

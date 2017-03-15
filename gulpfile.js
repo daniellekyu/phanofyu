@@ -1,7 +1,6 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
-// var sass = require('gulp-ruby-sass') 
 var notify = require('gulp-notify') 
 var bower = require('gulp-bower');
 var browserify = require('browserify');
@@ -23,10 +22,10 @@ gulp.task('bower', function() { 
 
 gulp.task('js', function() {
 	return browserify('js/main.js')
-	    .transform(
+		.transform(
 			stringify(stringify, {
-		        appliesTo: { includeExtensions: ['.hbs'] }
-	       })
+				appliesTo: { includeExtensions: ['.hbs'] }
+			})
 		)
 		.bundle()
 		.pipe(source('main.js'))

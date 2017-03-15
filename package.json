@@ -5,8 +5,8 @@
   "repository": "https://github.com/daniellekyu/phanofyu.git",
   "author": "Danielle Yu <daniellekyu@gmail.com>",
   "dependencies": {
-    "bootstrap": "^3.3.7",
-    "bootstrap-sass": "^3.3.7",
+    "aos": "^2.1.1",
+    "bootstrap-select": "^1.12.2",
     "firebase": "^3.4.0",
     "fullpage.js": "^2.9.2",
     "handlebars": "^4.0.6",
@@ -22,7 +22,6 @@
     "gulp-compile-handlebars": "^0.6.1",
     "gulp-notify": "^2.2.0",
     "gulp-rename": "^1.2.2",
-    "gulp-ruby-sass": "^2.0.6",
     "gulp-sass": "^2.3.2",
     "stringify": "^5.1.0",
     "vinyl-buffer": "^1.0.0",

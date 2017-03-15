@@ -4,36 +4,22 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Phan of Yu</title>
 		<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
 		<link rel="stylesheet" href="./built/css/phanofyu.css">
 	</head>
 
 	<body>
 		{{> nav}}
-	    <section class="section section-hero parallax-window" id="home" data-parallax="scroll" data-image-src="./images/DSC02475.jpg">
-	    	<div class="section-content">
-		    	<h1 class="section-heading">We're a Phan of Yu!</h1>
-	    	</div>
-	    </section>
-	    <section class="section section-story" id="story"></section>
-	    <section class="section section-gallery" id="gallery">
-	    	<div class="gallery">
-	    		<figure class="gallery-image gallery-1"></figure>
-	    		<figure class="gallery-image gallery-2"></figure>
-	    	</div>
-	    </section>
-	    <section class="section section-bridal-party" id="bridalParty">
-	    </section>
-	    <section class="section section-festivities" id="festivities">
-	    </section>
-	    <section class="section section-registry" id="registry">
-	    </section>
-	    <section class="section section-travel" id="travel">
-	    </section>
-	    <section class="section section-todo" id="todo">
-	    </section>
-	    <section class="section section-hashtag" id="hashtag">
-	    </section>
+	    {{> hero}}
+	    {{> story}}
+	    {{> gallery}}
+	    {{> bridal-party}}
+	    {{> festivities}}
+	    {{> registry}}
+	    {{> travel}}
+	    {{> todo}}
+	    {{> hashtag}}
 		<script src="./built/js/main.js"></script>
 	</body>
 </html>

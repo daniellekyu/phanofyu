@@ -33,6 +33,26 @@ section {
 		}
 	}
 
+	&-story {
+		background-image: url('./../../images/DSC02702.jpg');
+		position: relative;
+
+		.section-content {
+			position: absolute;
+			background: rgba(255, 255, 255, .8);
+			top: 25px;
+			bottom: 25px;
+			right: 25px;
+			left: 25px;
+			padding: 50px;
+		}
+
+		h2 {
+			color: $-color-sage;
+			text-align: center;
+		}
+	}
+
 	&-gallery {
 		height: 100%;
 
@@ -60,12 +80,92 @@ section {
 		}
 	}
 
-	&-story {
-		background-image: url('./../../images/DSC02702.jpg');
+	&-bridal-party {
+		background-image: url('./../../images/DSC02633.jpg');
+	}
+
+	&-festivities {
+		background-image: url('./../../images/DSC02636.jpg');
+	}
+
+	&-registry {
+		background-image: url('./../../images/DSC02893.jpg');
+	}
+
+	&-travel {
+		background-image: url('./../../images/DSC02890.jpg');
+	}
+
+	&-todo {
+		background-image: url('./../../images/DSC02818.jpg');
 	}
 
 	&-hashtag {
 		background-image: url('./../../images/DSC03195.jpg');
+	}
+
+	&-youre-invited {
+		background-image: url('./../../images/DSC03308.jpg');
+	}
+
+	&-rsvp {
+		background-image: url('./../../images/DSC02426.jpg');
+		position: relative;
+
+		.row {
+			position: absolute;
+		    top: 50%;
+		    left: 0;
+		    right: 0;
+		    transform: translateY(-50%);
+
+		    @include viewport(small) {
+		    	position: static;
+		    	transform: none;
+		    }
+		}
+
+		&-title {
+			text-align: center;
+		}
+
+		.form-line {
+			margin-bottom: 15px;
+		}
+
+		.form-box {
+			background: white;
+		    padding: 25px;
+		}
+
+		.form-button {
+			background-color: $-color-sage;
+			border-color: $-color-sage;
+			color: white;
+
+			&-container {
+				width: 100%;
+				display: flex;
+				justify-content: flex-end;
+			}
+		}
+
+		.guest {
+			&-name {
+
+			}
+
+			&-entry {
+
+			}
+
+			&-unknown {
+				.guest-name-entry {
+					width: 220px;
+					display: inline-block;
+				}
+			}
+		}
 	}
 }
 

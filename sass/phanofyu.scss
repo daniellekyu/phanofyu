@@ -1,8 +1,9 @@
 // External Imports
-@import 'bootstrap';
-// @import 'theme';
+// - slick: carousel styles
+// - aos: animate on scroll styles
 @import './external/slick';
 @import './external/slick-theme';
+@import './external/aos';
 
 // My imports
 @import 'mixins';

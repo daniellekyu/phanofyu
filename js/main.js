@@ -3,9 +3,11 @@ require('firebase/auth');
 require('firebase/database');
 window.jQuery = $ = require('jquery');
 require('bootstrap');
+require('bootstrap-select');
 require('./parallax.min.js');
 require('slick-carousel');
 require('./nav');
+var animateOnScroll = require('aos');
 
 var config = {
     apiKey: "AIzaSyBADSmx6tSneYQW1q4TCtCaRHfdTW_HMPI",
@@ -22,6 +24,8 @@ var touchClass = 'touch';
 if (isTouchDevice) {
 	document.body.classList.add(touchClass);
 }
+
+animateOnScroll.init();
 
 require('./rsvp')();
 
