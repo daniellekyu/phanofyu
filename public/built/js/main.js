@@ -2,7 +2,7 @@
 module.exports = "<li class=\"menu-item\"><a href=\"#rsvp\">RSVP</a></li>\n";
 
 },{}],2:[function(require,module,exports){
-module.exports = "<section class=\"section section-youre-invited\">\n\t<h2 class=\"section-heading\">You're invited!</h2>\n</section>\n<section class=\"section section-rsvp container\" id=\"section-rsvp\">\n\t<div class=\"row\">\n\t\t<div class=\"col-lg-8 col-md-8 col-sm-8 col-lg-offset-2 col-md-offset-2 col-sm-offset-2 form-box\">\n\t\t\t<h3 class=\"section-rsvp-title\">RSVP</h3>\n\t\t\t<div class=\"form-line\">\n\t\t\t\t<span>Kindly respond by xx.xx.xx</span><br/>\n\t\t\t\t<span>We have reserved {{numSeats}} seats in your honor</span><br/>\n\t\t\t</div>\n\t\t\t<form id=\"rsvp\">\n\t\t\t\t<div class=\"form-group\">\n\t\t\t\t\t{{#each guests}}\n\t\t\t\t\t\t<div class=\"form-line {{#if name_unknown}}guest-unknown{{/if}}\">\n\t\t\t\t\t\t\t<span class=\"guest-name\">{{name}}</span>\n\t\t\t\t\t\t\t<div class=\"guest-entry\">\n\t\t\t\t\t\t\t\t{{#if name_unknown}}\n\t\t\t\t\t\t\t\t\t<input type=\"text\" class=\"form-control guest-name-entry\" placeholder=\"Guest's Name\"></input>\n\t\t\t\t\t\t\t\t{{/if}}\n\t\t\t\t\t\t\t\t<select name=\"rsvp\" id=\"rsvp-{{@index}}\">\n\t\t\t\t\t\t\t\t\t<option\n\t\t\t\t\t\t\t\t\t\t{{#eq status 'no response'}}selected{{/eq}}\n\t\t\t\t\t\t\t\t\t>No response</option>\n\t\t\t\t\t\t\t\t\t<option\n\t\t\t\t\t\t\t\t\t\t{{#eq status 'attending'}}selected{{/eq}}\n\t\t\t\t\t\t\t\t\t>Attending</option>\n\t\t\t\t\t\t\t\t\t<option\n\t\t\t\t\t\t\t\t\t\t{{#eq status 'decline'}}selected{{/eq}}\n\t\t\t\t\t\t\t\t\t>Regretfully decline</option>\n\t\t\t\t\t\t\t\t</select>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t{{/each}}\n\t\t\t\t\t<div class=\"form-line\">\n\t\t\t\t\t\t<span>Shorty what you drank?</span>\n\t\t\t\t\t\t<input type=\"text\" id=\"drink-selection\" class=\"form-control\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"form-line\">\n\t\t\t\t\t\t<span>Hey Mr. DJ play my song:</span>\n\t\t\t\t\t\t<input id=\"song-selection\" class=\"form-control\">\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</form>\n\t\t\t<div class=\"form-button-container\">\n\t\t\t\t<button class=\"btn form-button\" id=\"saveRsvp\">Save</button>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</section>\n";
+module.exports = "<section class=\"section section-youre-invited\">\n\t<h2 class=\"section-heading\">You're invited!</h2>\n</section>\n<section class=\"section section-rsvp container\" id=\"section-rsvp\">\n\t<div class=\"row\">\n\t\t<div class=\"col-lg-8 col-md-8 col-sm-8 col-lg-offset-2 col-md-offset-2 col-sm-offset-2 form-box\">\n\t\t\t<div class=\"form-toggle-box\" id=\"formContent\">\n\t\t\t\t<h3 class=\"section-rsvp-title\">RSVP</h3>\n\t\t\t\t<div class=\"form-line\">\n\t\t\t\t\t<span>Kindly respond by xx.xx.xx</span><br/>\n\t\t\t\t\t<span>We have reserved {{numSeats}} seats in your honor</span><br/>\n\t\t\t\t</div>\n\t\t\t\t<form id=\"rsvp\">\n\t\t\t\t\t<div class=\"form-group\">\n\t\t\t\t\t\t{{#each guests}}\n\t\t\t\t\t\t\t<div class=\"form-line {{#if name_unknown}}guest-unknown{{/if}}\">\n\t\t\t\t\t\t\t\t<span class=\"guest-name\">{{name}}</span>\n\t\t\t\t\t\t\t\t<div class=\"guest-entry\">\n\t\t\t\t\t\t\t\t\t{{#if name_unknown}}\n\t\t\t\t\t\t\t\t\t\t<input type=\"text\" class=\"form-control guest-name-entry\" placeholder=\"Guest's Name\"></input>\n\t\t\t\t\t\t\t\t\t{{/if}}\n\t\t\t\t\t\t\t\t\t<select name=\"rsvp\" id=\"rsvp-{{@index}}\">\n\t\t\t\t\t\t\t\t\t\t<option\n\t\t\t\t\t\t\t\t\t\t\t{{#eq status 'no response'}}selected{{/eq}}\n\t\t\t\t\t\t\t\t\t\t>No response</option>\n\t\t\t\t\t\t\t\t\t\t<option\n\t\t\t\t\t\t\t\t\t\t\t{{#eq status 'attending'}}selected{{/eq}}\n\t\t\t\t\t\t\t\t\t\t>Attending</option>\n\t\t\t\t\t\t\t\t\t\t<option\n\t\t\t\t\t\t\t\t\t\t\t{{#eq status 'decline'}}selected{{/eq}}\n\t\t\t\t\t\t\t\t\t\t>Regretfully decline</option>\n\t\t\t\t\t\t\t\t\t</select>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t{{/each}}\n\t\t\t\t\t\t<div class=\"form-line\">\n\t\t\t\t\t\t\t<span>Shorty what you drank?</span>\n\t\t\t\t\t\t\t<input type=\"text\" id=\"drink-selection\" class=\"form-control\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"form-line\">\n\t\t\t\t\t\t\t<span>Hey Mr. DJ play my song:</span>\n\t\t\t\t\t\t\t<input id=\"song-selection\" class=\"form-control\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</form>\n\t\t\t\t<div class=\"form-button-container\">\n\t\t\t\t\t<button class=\"btn form-button\" id=\"saveRsvp\">Save</button>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\t<div class=\"row hid form-toggle-box\" id=\"formSaveMessage\">\n\t\t<div class=\"col-lg-8 col-md-8 col-sm-8 col-lg-offset-2 col-md-offset-2 col-sm-offset-2 form-box\">\n\t\t\t<h3 class=\"section-rsvp-title\">Thank you! Your selections have been saved.</h3>\n\t\t\t<span>Need to make changes? No worries.</span>\n\t\t\t<div class=\"form-button-container\">\n\t\t\t\t<button class=\"btn form-button\" id=\"updateSelections\">Update RSVP</button>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</section>\n";
 
 },{}],3:[function(require,module,exports){
 var firebase = require('firebase/app');
@@ -136,6 +136,8 @@ module.exports = function() {
 				style: 'btn-default',
 				size: 4
 			});
+
+			document.getElementById('updateSelections').addEventListener('click', showForm);
 		});
 	}
 
@@ -166,6 +168,17 @@ module.exports = function() {
 		updates['/householdId/' + householdId + '/' + 0 + '/songs'] = songSelection;
 
 		firebase.database().ref().update(updates);
+		showSaveMessage();
+	}
+
+	function showForm() {
+		$('#formContent').toggleClass('hid');
+		$('#formSaveMessage').toggleClass('hid');
+	}
+
+	function showSaveMessage() {
+		$('#formContent').toggleClass('hid');
+		$('#formSaveMessage').toggleClass('hid');
 	}
 };
 

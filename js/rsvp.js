@@ -39,6 +39,8 @@ module.exports = function() {
 				style: 'btn-default',
 				size: 4
 			});
+
+			document.getElementById('updateSelections').addEventListener('click', showForm);
 		});
 	}
 
@@ -69,6 +71,17 @@ module.exports = function() {
 		updates['/householdId/' + householdId + '/' + 0 + '/songs'] = songSelection;
 
 		firebase.database().ref().update(updates);
+		showSaveMessage();
+	}
+
+	function showForm() {
+		$('#formContent').toggleClass('hid');
+		$('#formSaveMessage').toggleClass('hid');
+	}
+
+	function showSaveMessage() {
+		$('#formContent').toggleClass('hid');
+		$('#formSaveMessage').toggleClass('hid');
 	}
 };
 

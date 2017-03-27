@@ -9,6 +9,7 @@ var buffer = require('vinyl-buffer');
 var stringify = require('stringify');
 var handlebars = require('gulp-compile-handlebars');
 var rename = require('gulp-rename');
+var runSequence = require('run-sequence');
 
 var config = {
      sassPath: './sass',
@@ -48,6 +49,19 @@ gulp.task('sass', function () {
 		.pipe(gulp.dest('./public/built/css'));
 });
 
+var sectionsData = require('./js/sections.json');
+
+gulp.task('sections-hbs', function() {
+
+	for (var i = 0; i < sectionsData.section.length; i++) {
+		var sectionData = sectionsData.section[i];
+		gulp.src('./hbs/section.hbs')
+			.pipe(handlebars(sectionData))
+			.pipe(rename(sectionData.name + '.hbs'))
+			.pipe(gulp.dest('./hbs/'));
+	}
+});
+
 gulp.task('hbs', function () {
     var options = {
         batch : ['./hbs'],
@@ -64,4 +78,12 @@ gulp.task('hbs', function () {
         .pipe(gulp.dest('public'));
 });
 
-gulp.task('default', ['bower', 'sass', 'js', 'hbs']);
+
+gulp.task('default', function(callback) {
+	runSequence(
+		'sections-hbs',
+		['bower', 'sass', 'js'],
+		'hbs',
+		callback);
+});
+// gulp.task('default', ['sections-hbs', 'bower', 'sass', 'js', 'hbs']);

@@ -1,0 +1,29 @@
+{
+	"section": [
+		{
+			"name": "story",
+			"title": "Our Story",
+			"content": ""
+		},
+		{
+			"name": "festivities",
+			"title": "Festivities",
+			"content": ""
+		},
+		{
+			"name": "registry",
+			"title": "Registry",
+			"content": ""
+		},
+		{
+			"name": "travel",
+			"title": "Travel",
+			"content": ""
+		},
+		{
+			"name": "todo",
+			"title": "To Do / To Eat",
+			"content": ""
+		}
+	]
+}

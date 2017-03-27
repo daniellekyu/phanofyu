@@ -1,0 +1,71 @@
+.section-rsvp {
+	@include image(DSC02426);
+	position: relative;
+
+	.row {
+		position: absolute;
+	    top: 50%;
+	    left: 0;
+	    right: 0;
+	    transform: translateY(-50%);
+	    margin: 0;
+
+	    @include viewport(small) {
+	    	position: static;
+	    	transform: none;
+	    }
+	}
+
+	&-title {
+		text-align: center;
+	}
+
+	.form-line {
+		margin-bottom: 15px;
+	}
+
+	.form-box {
+		background: white;
+	    padding: 25px;
+	}
+
+	.form-button {
+		background-color: $-color-sage;
+		border-color: $-color-sage;
+		color: white;
+
+		&-container {
+			width: 100%;
+			display: flex;
+			justify-content: flex-end;
+		}
+	}
+
+	.guest {
+		&-name {
+
+		}
+
+		&-entry {
+
+		}
+
+		&-unknown {
+			.guest-name-entry {
+				width: 220px;
+				display: inline-block;
+			}
+		}
+	}
+
+	.form-toggle-box {
+		opacity: 1;
+		transition: opacity 200ms ease-in-out;
+		z-index: 1;
+	}
+
+	.hid {
+		opacity: 0;
+		z-index: -1;
+	}
+}
