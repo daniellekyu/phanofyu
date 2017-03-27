@@ -13,8 +13,24 @@
     src: url('./../../font/bromello.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: 'BacktoBlackDemo';
+    src: url('./../../font/BacktoBlackDemo.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'bakery';
+    src: url('./../../font/bakery.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'bromello';
+    src: url('./../../font/bromello.ttf') format('truetype');
+}
+
 h1,
 h2 {
-	font-family: 'luna', Verdana, Tahoma;
     color: white;
+	font-family: 'Reem Kufi', sans-serif;
+    text-transform: uppercase;
 }

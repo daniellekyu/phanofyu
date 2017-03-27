@@ -13,6 +13,19 @@ section {
 	background-size: cover;
 	background-position: center center;
 
+	.section-content {
+		background: rgba(255, 255, 255, .85);
+		padding: 50px;
+		margin: 25px auto;
+		height: calc(100vh - 50px);
+		max-width: 800px;
+	}
+
+	.section-heading {
+		color: $-color-sage;
+		text-align: center;
+	}
+
 	&-hero {
 		text-align: center;
 
@@ -22,35 +35,25 @@ section {
 			bottom: 0;
 			left: 0;
 			right: 0;
+			background: none;
+			padding: 0;
+			margin: 0;
+			height: auto;
+			max-width: initial;
 		}
 
 		.section-heading {
-			position: absolute;
+			color: white;
+			position: relative;
 			top: 21%;
-			left: 0;
-			right: 0;
+			margin: 0 auto;
 			line-height: 2em;
 		}
 	}
 
 	&-story {
-		background-image: url('./../../images/DSC02702.jpg');
+		@include image(DSC02702);
 		position: relative;
-
-		.section-content {
-			position: absolute;
-			background: rgba(255, 255, 255, .8);
-			top: 25px;
-			bottom: 25px;
-			right: 25px;
-			left: 25px;
-			padding: 50px;
-		}
-
-		h2 {
-			color: $-color-sage;
-			text-align: center;
-		}
 	}
 
 	&-gallery {
@@ -72,44 +75,51 @@ section {
 		}
 
 		.gallery-1 {
-			background-image: url('./../../images/DSC02567.jpg');
+			@include image(DSC02567);
 		}
 
 		.gallery-2 {
-			background-image: url('./../../images/DSC03200.jpg');
+			@include image(DSC03200);
 		}
 	}
 
 	&-bridal-party {
-		background-image: url('./../../images/DSC02633.jpg');
+		@include image(DSC02793);
 	}
 
 	&-festivities {
-		background-image: url('./../../images/DSC02636.jpg');
+		@include image(DSC02636);
 	}
 
 	&-registry {
-		background-image: url('./../../images/DSC02893.jpg');
+		@include image(DSC02893);
 	}
 
 	&-travel {
-		background-image: url('./../../images/DSC02890.jpg');
+		@include image(DSC02890);
 	}
 
 	&-todo {
-		background-image: url('./../../images/DSC02818.jpg');
-	}
-
-	&-hashtag {
-		background-image: url('./../../images/DSC03195.jpg');
+		@include image(DSC02818);
 	}
 
 	&-youre-invited {
-		background-image: url('./../../images/DSC03308.jpg');
+		@include image(DSC03308);
+
+		.section-heading {
+			font-family: 'bakery';
+			text-transform: none;
+			color: white;
+			margin-top: 0;
+			margin-bottom: 0;
+			font-size: 10em;
+			position: relative;
+			top: 10%;
+		}
 	}
 
 	&-rsvp {
-		background-image: url('./../../images/DSC02426.jpg');
+		@include image(DSC02426);
 		position: relative;
 
 		.row {
@@ -118,6 +128,7 @@ section {
 		    left: 0;
 		    right: 0;
 		    transform: translateY(-50%);
+		    margin: 0;
 
 		    @include viewport(small) {
 		    	position: static;

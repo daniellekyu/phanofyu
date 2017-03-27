@@ -34,7 +34,6 @@ module.exports = (function() {
 	        e.preventDefault();
 	        var href = e.target.href;
 	        var hash = e.target.hash;
-	        console.log(e);
 	        $('.close').trigger('click');
 	        $('html, body').animate({
 	            scrollTop: $(hash).offset().top + 'px'

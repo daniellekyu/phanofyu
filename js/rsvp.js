@@ -29,7 +29,7 @@ module.exports = function() {
 			household = response.val();
 			data.guests = household;
 			var html = renderTemplate(data);
-			$(html).insertAfter($('#hashtag'));
+			$(html).insertAfter($('#todo'));
 			document.getElementById('saveRsvp').addEventListener('click', updateRsvp.bind(this, householdId, data));
 
 			var htmlForNav = handlebars.compile(rsvpNavSource);
