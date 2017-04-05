@@ -79,11 +79,13 @@ gulp.task('hbs', function () {
 });
 
 
-gulp.task('default', function(callback) {
-	runSequence(
-		'sections-hbs',
-		['bower', 'sass', 'js'],
-		'hbs',
-		callback);
-});
+gulp.task('default', 
+	// function(callback) {
+// 	runSequence(
+		// 'sections-hbs',
+		['bower', 'sass', 'js', 'hbs']//,
+		// ,
+		// callback);
+// }
+);
 // gulp.task('default', ['sections-hbs', 'bower', 'sass', 'js', 'hbs']);

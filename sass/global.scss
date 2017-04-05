@@ -10,3 +10,7 @@ body {
 	width: 100px;
 	height: $-navbar-height;
 }
+
+.scrolloff {
+    pointer-events: none;
+}

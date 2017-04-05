@@ -24,13 +24,17 @@
 }
 
 @font-face {
-    font-family: 'bromello';
-    src: url('./../../font/bromello.ttf') format('truetype');
+    font-family: 'typewriter';
+    src: url('./../../font/TravelingTypewriter.ttf') format('truetype');
 }
 
 h1,
 h2 {
     color: white;
 	font-family: 'Reem Kufi', sans-serif;
-    text-transform: uppercase;
+    margin: 0;
+}
+
+h1 {
+    font-size: 48px;
 }

@@ -3,7 +3,7 @@
 		{
 			"name": "story",
 			"title": "Our Story",
-			"content": ""
+			"content": "Our story began in the most romantic place. The parking lot at the University of California, Irvine.  The part of the story that Danielle likes to mention is that Minh popped out of a bush with his pick-up line “Hey, do you know where I can find parking?” It turns out that both of our friends decided to have a joint birthday party together and each friend invited us. We struck up a conversation at the party and kept in touch. A few months later Minh asked Danielle out on their first date and the rest, as they say, is history."
 		},
 		{
 			"name": "festivities",
@@ -18,11 +18,6 @@
 		{
 			"name": "travel",
 			"title": "Travel",
-			"content": ""
-		},
-		{
-			"name": "todo",
-			"title": "To Do / To Eat",
 			"content": ""
 		}
 	]

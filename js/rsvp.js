@@ -8,6 +8,17 @@ handlebars.registerHelper('eq', function (value1, value2, options) {
 	return options.inverse(this);
 });
 
+var partialsArray = ['festivities', 'registry', 'travel', 'todo'];
+
+var festivitiesSource = require('./../hbs/festivities.hbs');
+handlebars.registerPartial('festivities', festivitiesSource);
+var registrySource = require('./../hbs/registry.hbs');
+handlebars.registerPartial('registry', registrySource);
+var travelSource = require('./../hbs/travel.hbs');
+handlebars.registerPartial('travel', travelSource);
+var todoSource = require('./../hbs/todo.hbs');
+handlebars.registerPartial('todo', todoSource);
+
 var rsvpSource = require('./../hbs/rsvp.hbs');
 var rsvpNavSource = require('./../hbs/rsvp-nav.hbs');
 var firebase = require('firebase/app');
@@ -29,7 +40,7 @@ module.exports = function() {
 			household = response.val();
 			data.guests = household;
 			var html = renderTemplate(data);
-			$(html).insertAfter($('#todo'));
+			$(html).insertAfter($('#gallery'));
 			document.getElementById('saveRsvp').addEventListener('click', updateRsvp.bind(this, householdId, data));
 
 			var htmlForNav = handlebars.compile(rsvpNavSource);
@@ -41,6 +52,13 @@ module.exports = function() {
 			});
 
 			document.getElementById('updateSelections').addEventListener('click', showForm);
+			$('#canvas1').on('click', function () {
+			    $('#map_canvas1').removeClass('scrolloff');
+			});
+
+			$('#map_canvas1').mouseleave(function () {
+			    $('#map_canvas1').addClass('scrolloff');
+			});
 		});
 	}
 

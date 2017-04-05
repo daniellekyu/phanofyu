@@ -13,17 +13,35 @@ section {
 	background-size: cover;
 	background-position: center center;
 
-	.section-content {
+	&-content {
 		background: rgba(255, 255, 255, .85);
-		padding: 50px;
-		margin: 25px auto;
-		height: calc(100vh - 50px);
+		padding: 75px;
+		margin: 75px auto;
+		// height: calc(100vh - 50px);
 		max-width: 800px;
+
+		@include viewport(small) {
+			padding: 50px;
+		}
 	}
 
-	.section-heading {
+	&-heading {
 		color: $-color-sage;
 		text-align: center;
+		font-family: 'bakery';
+		font-size: 6em;
+	}
+
+	&-copy {
+		overflow: scroll;
+		height: 90%;
+		padding-top: 45px;
+		font-family: 'typewriter', sans-serif;
+		font-size: 1.5em;
+
+		@include viewport(small) {
+			padding-top: 30px;
+		}
 	}
 
 	&-hero {
@@ -53,17 +71,45 @@ section {
 
 	&-story {
 		@include image(DSC02702);
-		position: relative;
+
+		height: 130vh;
+
+		@include viewport(small) {
+			background: none;
+			height: auto;
+		}
+
+		&-background-small {
+			display: none;
+
+			@include viewport(small) {
+				@include image(DSC02702);
+
+				display: block;
+				width: 100%;
+				height: 100vh;
+			    background-position: center bottom;
+			}
+		}
 	}
 
 	&-gallery {
-		height: 100%;
 
 		&:hover {
 			.slick-prev,
 			.slick-next {
 				opacity: 1;
 			}
+		}
+
+		.section-heading {
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			z-index: 1;
+			color: white;
 		}
 
 		.gallery-image {
@@ -74,6 +120,11 @@ section {
 			background-position: center center;
 		}
 
+		.gallery-0 {
+			background: rgba(150, 170, 129, 0.5);
+			position: relative;
+		}
+
 		.gallery-1 {
 			@include image(DSC02567);
 		}
@@ -81,26 +132,108 @@ section {
 		.gallery-2 {
 			@include image(DSC03200);
 		}
+
+		.gallery-3 {
+			@include image(DSC02818);
+		}
+
+		.gallery-4 {
+			@include image(DSC03195);
+		}
 	}
 
-	&-bridal-party {
-		@include image(DSC02793);
-	}
+	// &-bridal-party {
+	// 	@include image(DSC02793);
+	// }
 
 	&-festivities {
-		@include image(DSC02636);
+		// @include image(DSC02636);
+		height: auto;
+
+		.highlight {
+			color: $-color-sage;
+		}
 	}
 
 	&-registry {
-		@include image(DSC02893);
+		@include image(DSC02890);
+
+		background-position: bottom right;
+
+		@include viewport(small) {
+			background: rgba(150,170,129, .8);
+			height: auto;
+		}
+
+		&-background-small {
+			display: none;
+
+			@include viewport(small) {
+				@include image(DSC02890);
+
+				display: block;
+				width: 100%;
+				height: 100vh;
+			    height: 400px;
+			    background-size: cover;
+			    background-position: bottom right;
+			}
+		}
+
+		.section-heading {
+			color: white;
+		}
+
+		.section-content {
+			background: rgba(150,170,129, .8);
+			color: white;
+
+			@include viewport(small) {
+				background: none;
+			}
+		}
 	}
 
 	&-travel {
-		@include image(DSC02890);
+		height: auto;
+
+		h3 {
+			color: $-color-sage;
+			text-align: center;
+			margin: 75px auto 30px auto;
+			font-size: 1.75em;
+
+			&:first-of-type {
+				margin-top: 25px;
+			}
+		}
+
+		hr {
+			border-top: 1px solid rgba(150, 170, 129, 0.4);
+		    margin: 50px 75px;
+		}
 	}
 
 	&-todo {
-		@include image(DSC02818);
+		@include image(DSC02636);
+		height: auto;
+		max-width: 100%;
+
+		iframe {
+			width: 100%;
+		}
+
+		.section-content {
+			max-width: 100%;
+			text-align: center;
+			margin: 0;
+			padding-top: 150px;
+			padding-bottom: 150px;
+		}
+
+		.section-copy {
+			padding-bottom: 45px;
+		}
 	}
 
 	&-youre-invited {
