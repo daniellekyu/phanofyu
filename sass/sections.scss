@@ -22,6 +22,7 @@ section {
 
 		@include viewport(small) {
 			padding: 50px;
+			margin: 0 auto;
 		}
 	}
 
@@ -227,8 +228,6 @@ section {
 			max-width: 100%;
 			text-align: center;
 			margin: 0;
-			padding-top: 150px;
-			padding-bottom: 150px;
 		}
 
 		.section-copy {
