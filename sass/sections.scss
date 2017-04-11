@@ -135,20 +135,43 @@ section {
 		}
 
 		.gallery-3 {
-			@include image(DSC02818);
+			@include image(DSC02793);
 		}
 
 		.gallery-4 {
 			@include image(DSC03195);
 		}
+
+		.gallery-5 {
+			@include image(DSC02818);
+		}
+
+		.gallery-6 {
+			@include image(DSC02487);
+		}
+
+		.gallery-7 {
+			@include image(DSC02633);
+		}
+
+		.gallery-8 {
+			@include image(DSC03109);
+		}
+
+		.gallery-9 {
+			@include image(DSC03118);
+		}
+
+		.gallery-10 {
+			@include image(DSC03149);
+		}
+
+		.gallery-11 {
+			@include image(DSC03230);
+		}
 	}
 
-	// &-bridal-party {
-	// 	@include image(DSC02793);
-	// }
-
 	&-festivities {
-		// @include image(DSC02636);
 		height: auto;
 
 		.highlight {
@@ -174,7 +197,6 @@ section {
 
 				display: block;
 				width: 100%;
-				height: 100vh;
 			    height: 400px;
 			    background-size: cover;
 			    background-position: bottom right;
@@ -207,6 +229,10 @@ section {
 			&:first-of-type {
 				margin-top: 25px;
 			}
+		}
+
+		a {
+			color: $-color-sage;
 		}
 
 		hr {

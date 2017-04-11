@@ -7,60 +7,65 @@
 {{> travel}}
 {{> todo}}
 
-<section class="section section-rsvp container" id="section-rsvp">
-	<div class="row">
-		<div class="col-lg-8 col-md-8 col-sm-8 col-lg-offset-2 col-md-offset-2 col-sm-offset-2 form-box">
-			<div class="form-toggle-box" id="formContent">
-				<h3 class="section-heading">r.s.v.p.</h3>
-				<div class="form-line">
-					<span>Kindly respond by xx.xx.xx</span><br/>
-					<span>We have reserved {{numSeats}} seats in your honor</span><br/>
-				</div>
-				<form id="rsvp">
-					<div class="form-group">
-						{{#each guests}}
-							<div class="form-line {{#if name_unknown}}guest-unknown{{/if}}">
-								<span class="guest-name">{{name}}</span>
-								<div class="guest-entry">
-									{{#if name_unknown}}
-										<input type="text" class="form-control guest-name-entry" placeholder="Guest's Name"></input>
-									{{/if}}
-									<select name="rsvp" id="rsvp-{{@index}}">
-										<option
-											{{#eq status 'no response'}}selected{{/eq}}
-										>No response</option>
-										<option
-											{{#eq status 'attending'}}selected{{/eq}}
-										>Attending</option>
-										<option
-											{{#eq status 'decline'}}selected{{/eq}}
-										>Regretfully decline</option>
-									</select>
+<div class="section-rsvp-background-small"></div>
+<section class="section section-rsvp" id="section-rsvp">
+	<div class="container">
+		<div class="row">
+			<div class="section-content" id="formContent">
+				<div class="form-toggle-box">
+					<h2 class="section-heading">r.s.v.p.</h2>
+					<div class="section-copy">
+						<div class="form-line">
+							<span>Kindly respond by xx.xx.xx</span><br/>
+							<span>We have reserved {{numSeats}} seats in your honor</span><br/>
+						</div>
+						<form id="rsvp">
+							<div class="form-group">
+								{{#each guests}}
+									<div class="form-line {{#if name_unknown}}guest-unknown{{/if}}">
+										<span class="guest-name">{{name}}</span>
+										<div class="guest-entry">
+											{{#if name_unknown}}
+												<input type="text" class="form-control guest-name-entry" placeholder="Guest's Name"></input>
+											{{/if}}
+											<select name="rsvp" id="rsvp-{{@index}}">
+												<option
+													{{#eq status 'no response'}}selected{{/eq}}
+												>No response</option>
+												<option
+													{{#eq status 'attending'}}selected{{/eq}}
+												>Attending</option>
+												<option
+													{{#eq status 'decline'}}selected{{/eq}}
+												>Regretfully decline</option>
+											</select>
+										</div>
+									</div>
+								{{/each}}
+								<div class="form-line">
+									<span>Shorty what you drank?</span>
+									<input type="text" id="drink-selection" class="form-control">
+								</div>
+								<div class="form-line">
+									<span>Hey Mr. DJ play my song:</span>
+									<input id="song-selection" class="form-control">
 								</div>
 							</div>
-						{{/each}}
-						<div class="form-line">
-							<span>Shorty what you drank?</span>
-							<input type="text" id="drink-selection" class="form-control">
-						</div>
-						<div class="form-line">
-							<span>Hey Mr. DJ play my song:</span>
-							<input id="song-selection" class="form-control">
+						</form>
+						<div class="form-button-container">
+							<button class="btn form-button" id="saveRsvp">Save</button>
 						</div>
 					</div>
-				</form>
-				<div class="form-button-container">
-					<button class="btn form-button" id="saveRsvp">Save</button>
 				</div>
 			</div>
-		</div>
-	</div>
-	<div class="row hid form-toggle-box" id="formSaveMessage">
-		<div class="col-lg-8 col-md-8 col-sm-8 col-lg-offset-2 col-md-offset-2 col-sm-offset-2 form-box">
-			<h3 class="section-rsvp-title">Thank you! Your selections have been saved.</h3>
-			<span>Need to make changes? No worries.</span>
-			<div class="form-button-container">
-				<button class="btn form-button" id="updateSelections">Update RSVP</button>
+			<div class="section-content hid" id="formSaveMessage">
+				<div class="form-toggle-box">
+					<h3>Thank you! Your selections have been saved.</h3>
+					<span>Need to make changes? No worries.</span>
+					<div class="form-button-container">
+						<button class="btn form-button" id="updateSelections">Update RSVP</button>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

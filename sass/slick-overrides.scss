@@ -21,16 +21,17 @@
 	transform: translate(0, 0);
 
 	&:before {
+		font-family: 'Megrim';
 		font-size: 100px;
 	}
 }
 
 .slick-prev {
-    left: 4px;
+    left: 15px;
 }
 
 .slick-next {
-    right: 83px;
+    right: 40px;
 }
 
 .touch {

@@ -1,24 +1,4 @@
 @font-face {
-    font-family: 'notera';
-    src: url('./../../font/notera.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'luna';
-    src: url('./../../font/Luna.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'bromello';
-    src: url('./../../font/bromello.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'BacktoBlackDemo';
-    src: url('./../../font/BacktoBlackDemo.ttf') format('truetype');
-}
-
-@font-face {
     font-family: 'bakery';
     src: url('./../../font/bakery.ttf') format('truetype');
 }
@@ -28,10 +8,21 @@
     src: url('./../../font/TravelingTypewriter.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: 'Megrim', cursive;
+}
+
+@font-face {
+    font-family: 'Reem Kufi', cursive;
+}
+
+body {
+    font-family: 'typewriter';
+}
+
 h1,
 h2 {
     color: white;
-	font-family: 'Reem Kufi', sans-serif;
     margin: 0;
 }
 
