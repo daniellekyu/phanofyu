@@ -22,12 +22,16 @@
 						<form id="rsvp">
 							<div class="form-group">
 								{{#each guests}}
-									<div class="form-line {{#if name_unknown}}guest-unknown{{/if}}">
+									<div class="form-line">
 										<span class="guest-name">{{name}}</span>
 										<div class="guest-entry">
-											{{#if name_unknown}}
-												<input type="text" class="form-control guest-name-entry" placeholder="Guest's Name"></input>
-											{{/if}}
+											{{#exists name_unknown}}
+												{{#if name_unknown}}
+													<input type="text" class="form-control plus-one-name-entry" placeholder="Guest's Name" id="plus-one-name-entry">
+												{{else}}
+													<input type="text" class="form-control plus-one-name-entry" id="plus-one-name-entry" value={{name_entry}}>
+												{{/if}}
+											{{/exists}}
 											<select name="rsvp" id="rsvp-{{@index}}">
 												<option
 													{{#eq status 'no response'}}selected{{/eq}}
@@ -42,18 +46,20 @@
 										</div>
 									</div>
 								{{/each}}
-								<div class="form-line">
-									<span>What's your drink of choice?</span>
-									<input type="text" id="drink-selection" class="form-control">
-										{{drinks}}
-									</input>
-								</div>
-								<div class="form-line">
-									<span>What are your favorite songs to dance to?</span>
-									<input id="song-selection" class="form-control">
-										{{songs}}
-									</input>
-								</div>
+								{{#each guests}}
+									{{#exists drinks}}
+										<div class="form-line">
+											<span>What's your drink of choice?</span>
+											<input type="text" id="drink-selection" class="form-control" value="{{drinks}}">
+										</div>
+									{{/exists}}
+									{{#exists songs}}
+										<div class="form-line">
+											<span>What are your favorite songs to dance to?</span>
+											<input id="song-selection" class="form-control" value="{{songs}}">
+										</div>
+									{{/exists}}
+								{{/each}}
 							</div>
 						</form>
 						<div class="form-button-container">

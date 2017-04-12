@@ -8,7 +8,7 @@ module.exports = "<section class=\"section section-registry\" id=\"registry\">\n
 module.exports = "<li class=\"menu-item\"><a href=\"#festivities\">CEREMONY & RECEPTION</a></li>\n<li class=\"menu-item\"><a href=\"#registry\">REGISTRY</a></li>\n<li class=\"menu-item\"><a href=\"#travel\">TRAVEL</a></li>\n<li class=\"menu-item\"><a href=\"#todo\">TO DO / TO EAT</a></li>\n<li class=\"menu-item\"><a href=\"#rsvp\">RSVP</a></li>\n";
 
 },{}],4:[function(require,module,exports){
-module.exports = "<section class=\"section section-youre-invited\">\n\t<h2 class=\"section-heading\">you're invited!</h2>\n</section>\n\n{{> festivities}}\n{{> registry}}\n{{> travel}}\n{{> todo}}\n\n<div class=\"section-rsvp-background-small\"></div>\n<section class=\"section section-rsvp\" id=\"section-rsvp\">\n\t<div class=\"container\">\n\t\t<div class=\"row\">\n\t\t\t<div class=\"section-content\" id=\"formContent\">\n\t\t\t\t<div class=\"form-toggle-box\">\n\t\t\t\t\t<h2 class=\"section-heading\">r.s.v.p.</h2>\n\t\t\t\t\t<div class=\"section-copy\">\n\t\t\t\t\t\t<div class=\"form-line\">\n\t\t\t\t\t\t\t<span>Kindly respond by xx.xx.xx</span><br/>\n\t\t\t\t\t\t\t<span>We have reserved {{numSeats}} seats in your honor</span><br/>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<form id=\"rsvp\">\n\t\t\t\t\t\t\t<div class=\"form-group\">\n\t\t\t\t\t\t\t\t{{#each guests}}\n\t\t\t\t\t\t\t\t\t<div class=\"form-line {{#if name_unknown}}guest-unknown{{/if}}\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"guest-name\">{{name}}</span>\n\t\t\t\t\t\t\t\t\t\t<div class=\"guest-entry\">\n\t\t\t\t\t\t\t\t\t\t\t{{#if name_unknown}}\n\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"text\" class=\"form-control guest-name-entry\" placeholder=\"Guest's Name\"></input>\n\t\t\t\t\t\t\t\t\t\t\t{{/if}}\n\t\t\t\t\t\t\t\t\t\t\t<select name=\"rsvp\" id=\"rsvp-{{@index}}\">\n\t\t\t\t\t\t\t\t\t\t\t\t<option\n\t\t\t\t\t\t\t\t\t\t\t\t\t{{#eq status 'no response'}}selected{{/eq}}\n\t\t\t\t\t\t\t\t\t\t\t\t>No response</option>\n\t\t\t\t\t\t\t\t\t\t\t\t<option\n\t\t\t\t\t\t\t\t\t\t\t\t\t{{#eq status 'attending'}}selected{{/eq}}\n\t\t\t\t\t\t\t\t\t\t\t\t>Attending</option>\n\t\t\t\t\t\t\t\t\t\t\t\t<option\n\t\t\t\t\t\t\t\t\t\t\t\t\t{{#eq status 'decline'}}selected{{/eq}}\n\t\t\t\t\t\t\t\t\t\t\t\t>Regretfully decline</option>\n\t\t\t\t\t\t\t\t\t\t\t</select>\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t{{/each}}\n\t\t\t\t\t\t\t\t<div class=\"form-line\">\n\t\t\t\t\t\t\t\t\t<span>What's your drink of choice?</span>\n\t\t\t\t\t\t\t\t\t<input type=\"text\" id=\"drink-selection\" class=\"form-control\">\n\t\t\t\t\t\t\t\t\t\t{{drinks}}\n\t\t\t\t\t\t\t\t\t</input>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class=\"form-line\">\n\t\t\t\t\t\t\t\t\t<span>What are your favorite songs to dance to?</span>\n\t\t\t\t\t\t\t\t\t<input id=\"song-selection\" class=\"form-control\">\n\t\t\t\t\t\t\t\t\t\t{{songs}}\n\t\t\t\t\t\t\t\t\t</input>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</form>\n\t\t\t\t\t\t<div class=\"form-button-container\">\n\t\t\t\t\t\t\t<button class=\"btn form-button\" id=\"saveRsvp\">Save</button>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"section-content hid\" id=\"formSaveMessage\">\n\t\t\t\t<div class=\"form-toggle-box\">\n\t\t\t\t\t<h3>Thank you! Your selections have been saved.</h3>\n\t\t\t\t\t<span>Need to make changes? No worries.</span>\n\t\t\t\t\t<div class=\"form-button-container\">\n\t\t\t\t\t\t<button class=\"btn form-button\" id=\"updateSelections\">Update RSVP</button>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</section>\n";
+module.exports = "<section class=\"section section-youre-invited\">\n\t<h2 class=\"section-heading\">you're invited!</h2>\n</section>\n\n{{> festivities}}\n{{> registry}}\n{{> travel}}\n{{> todo}}\n\n<div class=\"section-rsvp-background-small\"></div>\n<section class=\"section section-rsvp\" id=\"section-rsvp\">\n\t<div class=\"container\">\n\t\t<div class=\"row\">\n\t\t\t<div class=\"section-content\" id=\"formContent\">\n\t\t\t\t<div class=\"form-toggle-box\">\n\t\t\t\t\t<h2 class=\"section-heading\">r.s.v.p.</h2>\n\t\t\t\t\t<div class=\"section-copy\">\n\t\t\t\t\t\t<div class=\"form-line\">\n\t\t\t\t\t\t\t<span>Kindly respond by xx.xx.xx</span><br/>\n\t\t\t\t\t\t\t<span>We have reserved {{numSeats}} seats in your honor</span><br/>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<form id=\"rsvp\">\n\t\t\t\t\t\t\t<div class=\"form-group\">\n\t\t\t\t\t\t\t\t{{#each guests}}\n\t\t\t\t\t\t\t\t\t<div class=\"form-line\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"guest-name\">{{name}}</span>\n\t\t\t\t\t\t\t\t\t\t<div class=\"guest-entry\">\n\t\t\t\t\t\t\t\t\t\t\t{{#exists name_unknown}}\n\t\t\t\t\t\t\t\t\t\t\t\t{{#if name_unknown}}\n\t\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"text\" class=\"form-control plus-one-name-entry\" placeholder=\"Guest's Name\" id=\"plus-one-name-entry\">\n\t\t\t\t\t\t\t\t\t\t\t\t{{else}}\n\t\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"text\" class=\"form-control plus-one-name-entry\" id=\"plus-one-name-entry\" value={{name_entry}}>\n\t\t\t\t\t\t\t\t\t\t\t\t{{/if}}\n\t\t\t\t\t\t\t\t\t\t\t{{/exists}}\n\t\t\t\t\t\t\t\t\t\t\t<select name=\"rsvp\" id=\"rsvp-{{@index}}\">\n\t\t\t\t\t\t\t\t\t\t\t\t<option\n\t\t\t\t\t\t\t\t\t\t\t\t\t{{#eq status 'no response'}}selected{{/eq}}\n\t\t\t\t\t\t\t\t\t\t\t\t>No response</option>\n\t\t\t\t\t\t\t\t\t\t\t\t<option\n\t\t\t\t\t\t\t\t\t\t\t\t\t{{#eq status 'attending'}}selected{{/eq}}\n\t\t\t\t\t\t\t\t\t\t\t\t>Attending</option>\n\t\t\t\t\t\t\t\t\t\t\t\t<option\n\t\t\t\t\t\t\t\t\t\t\t\t\t{{#eq status 'decline'}}selected{{/eq}}\n\t\t\t\t\t\t\t\t\t\t\t\t>Regretfully decline</option>\n\t\t\t\t\t\t\t\t\t\t\t</select>\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t{{/each}}\n\t\t\t\t\t\t\t\t{{#each guests}}\n\t\t\t\t\t\t\t\t\t{{#exists drinks}}\n\t\t\t\t\t\t\t\t\t\t<div class=\"form-line\">\n\t\t\t\t\t\t\t\t\t\t\t<span>What's your drink of choice?</span>\n\t\t\t\t\t\t\t\t\t\t\t<input type=\"text\" id=\"drink-selection\" class=\"form-control\" value=\"{{drinks}}\">\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t{{/exists}}\n\t\t\t\t\t\t\t\t\t{{#exists songs}}\n\t\t\t\t\t\t\t\t\t\t<div class=\"form-line\">\n\t\t\t\t\t\t\t\t\t\t\t<span>What are your favorite songs to dance to?</span>\n\t\t\t\t\t\t\t\t\t\t\t<input id=\"song-selection\" class=\"form-control\" value=\"{{songs}}\">\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t{{/exists}}\n\t\t\t\t\t\t\t\t{{/each}}\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</form>\n\t\t\t\t\t\t<div class=\"form-button-container\">\n\t\t\t\t\t\t\t<button class=\"btn form-button\" id=\"saveRsvp\">Save</button>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"section-content hid\" id=\"formSaveMessage\">\n\t\t\t\t<div class=\"form-toggle-box\">\n\t\t\t\t\t<h3>Thank you! Your selections have been saved.</h3>\n\t\t\t\t\t<span>Need to make changes? No worries.</span>\n\t\t\t\t\t<div class=\"form-button-container\">\n\t\t\t\t\t\t<button class=\"btn form-button\" id=\"updateSelections\">Update RSVP</button>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</section>\n";
 
 },{}],5:[function(require,module,exports){
 module.exports = "<section class=\"section section-todo\" id=\"todo\">\n\t<div class=\"section-content\">\n\t\t<h2 class=\"section-heading\">to do / to eat</h2>\n\t\t<div class=\"section-copy\">\n\t\t\tWe've mapped out a few of our favorite places below!\n\t\t</div>\n\t\t<div id=\"canvas1\" class=\"map\">\n\t\t\t<iframe id=\"map_canvas1\" class=\"scrolloff\" src=\"https://www.google.com/maps/d/embed?mid=1TIw0CPVkIgMNXnOm6S3tHDpNvnc\" width=\"640\" height=\"640\"></iframe>\n\t\t</div>\n\t</div>\n</section>\n";
@@ -117,6 +117,14 @@ handlebars.registerHelper('eq', function (value1, value2, options) {
 	return options.inverse(this);
 });
 
+handlebars.registerHelper('exists', function (value, options) {
+	if (value !== undefined) {
+		return options.fn(this);
+	}
+
+	return options.inverse(this);
+});
+
 var partialsArray = ['festivities', 'registry', 'travel', 'todo'];
 
 var festivitiesSource = require('./../hbs/festivities.hbs');
@@ -151,6 +159,8 @@ module.exports = function() {
 			var html = renderTemplate(data);
 			$(html).insertAfter($('#gallery'));
 			document.getElementById('saveRsvp').addEventListener('click', updateRsvp.bind(this, householdId, data));
+
+			console.log(data);
 
 			var htmlForNav = handlebars.compile(rsvpNavSource);
 			$('#nav').append(htmlForNav);
@@ -189,13 +199,16 @@ module.exports = function() {
 		var formValues = getFormValues();
 		var drinkSelection = document.getElementById('drink-selection', '#rsvp').value;
 		var songSelection = document.getElementById('song-selection', '#rsvp').value;
+		var plusOneNameEntry = document.getElementById('plus-one-name-entry', '#rsvp').value;
 
 		for (i; i < len; i++) {
-			updates['/householdId/' + householdId + '/' + i + '/status'] = formValues[i];
+			updates['/householdId/' + householdId + '/' + i + '/status'] = formValues[i].toLowerCase();
 		}
 
 		updates['/householdId/' + householdId + '/' + 0 + '/drinks'] = drinkSelection;
 		updates['/householdId/' + householdId + '/' + 0 + '/songs'] = songSelection;
+		updates['/householdId/' + householdId + '/' + 1 + '/name_unknown'] = false;
+		updates['/householdId/' + householdId + '/' + 1 + '/name_entry'] = plusOneNameEntry;
 
 		firebase.database().ref().update(updates);
 		showSaveMessage();

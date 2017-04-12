@@ -42,21 +42,9 @@
 		}
 	}
 
-	.guest {
-		&-name {
-
-		}
-
-		&-entry {
-
-		}
-
-		&-unknown {
-			.guest-name-entry {
-				width: 220px;
-				display: inline-block;
-			}
-		}
+	.plus-one-name-entry {
+		width: 220px;
+		display: inline-block;
 	}
 
 	.form-toggle-box {
