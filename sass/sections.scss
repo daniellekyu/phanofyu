@@ -73,11 +73,12 @@ section {
 	&-story {
 		@include image(DSC02702);
 
-		height: 130vh;
+		min-height: 1250px;
 
 		@include viewport(small) {
 			background: none;
 			height: auto;
+			min-height: 0;
 		}
 
 		&-background-small {
@@ -89,6 +90,7 @@ section {
 				display: block;
 				width: 100%;
 				height: 100vh;
+				max-height: 800px;
 			    background-position: center bottom;
 			}
 		}
@@ -117,8 +119,11 @@ section {
 			height: 100vh;
 			width: 100%;
 			min-width: $-smallest-viewport-width;
-			background-size: cover;
+			// background-size: cover;
+			background-size: contain;
 			background-position: center center;
+			background-repeat: no-repeat;
+			background-color: black;
 		}
 
 		.gallery-0 {
@@ -132,6 +137,7 @@ section {
 
 		.gallery-2 {
 			@include image(DSC03200);
+			// background-position: center bottom;
 		}
 
 		.gallery-3 {
@@ -140,30 +146,37 @@ section {
 
 		.gallery-4 {
 			@include image(DSC03195);
+			// background-position: center bottom;
 		}
 
 		.gallery-5 {
 			@include image(DSC02818);
+			// background-position: center bottom;
 		}
 
 		.gallery-6 {
 			@include image(DSC02487);
+			// background-position: left center;
 		}
 
 		.gallery-7 {
 			@include image(DSC02633);
+			// background-position: center bottom;
 		}
 
 		.gallery-8 {
 			@include image(DSC03109);
+			// background-position: left bottom;
 		}
 
 		.gallery-9 {
 			@include image(DSC03118);
+			// background-position: center bottom;
 		}
 
 		.gallery-10 {
 			@include image(DSC03149);
+			// background-position: center bottom;
 		}
 
 		.gallery-11 {
@@ -238,6 +251,14 @@ section {
 		hr {
 			border-top: 1px solid rgba(150, 170, 129, 0.4);
 		    margin: 50px 75px;
+		}
+
+		.section-content {
+			margin: 0 auto;
+		}
+
+		.section-copy {
+			padding: 0;
 		}
 	}
 

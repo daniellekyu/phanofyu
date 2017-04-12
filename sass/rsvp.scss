@@ -1,10 +1,11 @@
 .section-rsvp {
 	@include image(DSC03252);
 	position: relative;
+	height: auto;
+	min-height: 100vh;
 
 	@include viewport(small) {
 		background: none;
-		height: auto;
 	}
 
 	&-background-small {
