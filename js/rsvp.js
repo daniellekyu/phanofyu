@@ -16,6 +16,14 @@ handlebars.registerHelper('exists', function (value, options) {
 	return options.inverse(this);
 });
 
+handlebars.registerHelper('nonexistent', function (value, options) {
+	if (value === undefined) {
+		return options.fn(this);
+	}
+
+	return options.inverse(this);
+});
+
 var partialsArray = ['festivities', 'registry', 'travel', 'todo'];
 
 var festivitiesSource = require('./../hbs/festivities.hbs');
@@ -51,8 +59,6 @@ module.exports = function() {
 			$(html).insertAfter($('#gallery'));
 			document.getElementById('saveRsvp').addEventListener('click', updateRsvp.bind(this, householdId, data));
 
-			console.log(data);
-
 			var htmlForNav = handlebars.compile(rsvpNavSource);
 			$('#nav').append(htmlForNav);
 
@@ -72,7 +78,7 @@ module.exports = function() {
 		});
 	}
 
-	function getFormValues() {
+	function getRsvpStatuses() {
 		var formValues = document.getElementsByTagName('select', '#rsvp');
 		formValues = Array.prototype.slice.call(formValues);
 		formValues = formValues.map(function(el) {
@@ -82,24 +88,45 @@ module.exports = function() {
 		return formValues;
 	}
 
+	function getNames() {
+		var names = document.querySelectorAll('.has-name', '#rsvp');
+		names = Array.prototype.slice.call(names);
+		names = names.map(function(el) {
+			return el.innerHTML;
+		});
+
+		var plusOneNames = document.querySelectorAll('.plus-one-name-entry', '#rsvp');
+		plusOneNames = Array.prototype.slice.call(plusOneNames);
+		plusOneNames = plusOneNames.map(function(el) {
+			return el.value;
+		});
+
+		names = names.concat(plusOneNames);
+
+		return names;
+	}
+
 	function updateRsvp(householdId, data) {
 		var updates = {};
 		var i = 0,
 			len = data.guests.length;
 
-		var formValues = getFormValues();
+		var names = getNames();
+		var rsvpStatuses = getRsvpStatuses();
 		var drinkSelection = document.getElementById('drink-selection', '#rsvp').value;
 		var songSelection = document.getElementById('song-selection', '#rsvp').value;
-		var plusOneNameEntry = document.getElementById('plus-one-name-entry', '#rsvp').value;
 
 		for (i; i < len; i++) {
-			updates['/householdId/' + householdId + '/' + i + '/status'] = formValues[i].toLowerCase();
+			updates['/householdId/' + householdId + '/' + i + '/status'] = rsvpStatuses[i].toLowerCase();
+
+			if (names[i] && data.guests[i].name_unknown) {
+				updates['/householdId/' + householdId + '/' + i + '/name_unknown'] = false;
+				updates['/householdId/' + householdId + '/' + i + '/name_entry'] = names[i];
+			}
 		}
 
 		updates['/householdId/' + householdId + '/' + 0 + '/drinks'] = drinkSelection;
 		updates['/householdId/' + householdId + '/' + 0 + '/songs'] = songSelection;
-		updates['/householdId/' + householdId + '/' + 1 + '/name_unknown'] = false;
-		updates['/householdId/' + householdId + '/' + 1 + '/name_entry'] = plusOneNameEntry;
 
 		firebase.database().ref().update(updates);
 		showSaveMessage();

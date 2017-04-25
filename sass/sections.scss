@@ -63,9 +63,10 @@ section {
 
 		.section-heading {
 			color: white;
-			position: relative;
+			position: absolute;
 			top: 21%;
-			margin: 0 auto;
+			left: 0;
+			right: 0;
 			line-height: 2em;
 		}
 	}

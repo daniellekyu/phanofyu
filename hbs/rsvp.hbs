@@ -23,13 +23,13 @@
 							<div class="form-group">
 								{{#each guests}}
 									<div class="form-line">
-										<span class="guest-name">{{name}}</span>
+										<span class="guest-name {{#nonexistent name_unknown}}has-name{{/nonexistent}}">{{name}}</span>
 										<div class="guest-entry">
 											{{#exists name_unknown}}
 												{{#if name_unknown}}
-													<input type="text" class="form-control plus-one-name-entry" placeholder="Guest's Name" id="plus-one-name-entry">
+													<input type="text" class="form-control plus-one-name-entry" placeholder="Guest's Name">
 												{{else}}
-													<input type="text" class="form-control plus-one-name-entry" id="plus-one-name-entry" value={{name_entry}}>
+													<input type="text" class="form-control plus-one-name-entry" value={{name_entry}}>
 												{{/if}}
 											{{/exists}}
 											<select name="rsvp" id="rsvp-{{@index}}">
