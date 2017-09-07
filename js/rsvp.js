@@ -24,16 +24,7 @@ handlebars.registerHelper('nonexistent', function (value, options) {
 	return options.inverse(this);
 });
 
-var partialsArray = ['festivities', 'registry', 'travel', 'todo'];
-
-var festivitiesSource = require('./../hbs/festivities.hbs');
-handlebars.registerPartial('festivities', festivitiesSource);
-var registrySource = require('./../hbs/registry.hbs');
-handlebars.registerPartial('registry', registrySource);
-var travelSource = require('./../hbs/travel.hbs');
-handlebars.registerPartial('travel', travelSource);
-var todoSource = require('./../hbs/todo.hbs');
-handlebars.registerPartial('todo', todoSource);
+var youreInvitedSource = require('./../hbs/youreinvited.hbs');
 
 var rsvpSource = require('./../hbs/rsvp.hbs');
 var rsvpNavSource = require('./../hbs/rsvp-nav.hbs');
@@ -44,6 +35,8 @@ module.exports = function() {
 	var database = firebase.database();
 
 	var renderTemplate = handlebars.compile(rsvpSource);
+
+	var youreInvitedTemplate = handlebars.compile(youreInvitedSource)();
 
 	var queryString = window.location.search;
 
@@ -56,7 +49,11 @@ module.exports = function() {
 			household = response.val();
 			data.guests = household;
 			var html = renderTemplate(data);
-			$(html).insertAfter($('#gallery'));
+			$(html).insertAfter($('#todo'));
+
+			// add you're invited section
+			$(youreInvitedTemplate).insertAfter($('#gallery'));
+
 			document.getElementById('saveRsvp').addEventListener('click', updateRsvp.bind(this, householdId, data));
 
 			var htmlForNav = handlebars.compile(rsvpNavSource);
